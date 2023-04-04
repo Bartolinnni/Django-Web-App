@@ -1,0 +1,11 @@
+{% extends 'main/base.html' %}
+
+
+{% block content %}
+    <a href = "{% url 'updatepost' post.id %}">
+        <em>Edit your post</em>
+    </a>
+    <h1>{{post.name}}</h1>
+    <p>{{post.text}}</p>
+
+{% endblock %}

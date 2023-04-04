@@ -1,0 +1,13 @@
+{% extends 'main/base.html' %}
+
+
+{%block content%}
+    <form method='POST' action="/search/">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit" name="update"
+         style = 'color:black; background-color: green; margin: auto; padding: 5px; border-radius: 25px; width: 150px; height: 40px;'>
+            <h3>Update Post</h3>
+        </button>
+     </form>
+{%endblock%}
