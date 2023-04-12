@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static  'style.css' %}">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li>
+                        <div class="zdjinapis" id ='astronautadiv'><a href=""><img src="{% static 'eye.jpg' %}" alt="" id="photoastro"></a></div>
+                    </li>
+                    <li>
+                        <div class="zdjinapis" id ='homediv'><a href="{% url 'index' %}"><img src="{% static 'home1.png' %}" alt="" id="photohome" > <b>Home</b></a></div>
+                    </li>
+                    {% if user.is_authenticated %}
+                        <li>
+                            <div class="zdjinapis" id ='searchdiv'><a href="{% url 'search' %}"><img src="{% static 'search1.png' %}" alt="" id = 'photosearch'> <b>Search</b> </a></div>
+                        </li>
+                        <li>
+                            <div class="zdjinapis" id ='searchdiv'><a href="{% url 'blog' %}"> <b>Posts</b> </a> </div>
+                        </li>
+                    {% endif %}
+                </ul>
+            </nav>
+            <div class="container">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}"><img src="{% static 'logout.png' %}" alt="" id ='userpng'></a>
+                {% else %}
+                    <a href="{% url 'login' %}"><img src="{% static 'user.png' %}" alt="" id ='userpng'></a>
+                {% endif %}              
+            </div>
+        </header>
+
+
+
+        <main>
+            <span style="margin: 60px;  font-size: 60px; color: black;"><em style="color: black; font-weight:700;">Dzień dobry!</em></span>
+            <div class="container" style="color: black;">
+                {% block content %}
+                <!-- <div> <img src="{% static 'gloves.png' %}" alt="" class = 'photogloves'> Witam</div>
+                <div> <img src="photos/gloves.png" alt="" class = 'photogloves'>Witam</div>
+                <div><img src="photos/gloves.png" alt="" class = 'photogloves'>Witam</div>
+            </div>
+            <div class="container" style="border-bottom: black 2px solid;">
+               
+                <div><img src="photos/gloves.png" alt="" class = 'photogloves'>Witam</div>
+                <div><img src="photos/gloves.png" alt="" class = 'photogloves'>Witam</div>
+                <div><img src="photos/gloves.png" alt="" class = 'photogloves'>Witam</div> -->
+                {% endblock%}
+            </div>
+        </main>
+        
+        <footer>
+            <div class="container">
+                <img src="{% static 'github.png' %}" alt="" class = 'githubdown'>
+                <span><em style="color:black;font-size: 30px;font-weight: bold;">Bartek Ruszkowski</em></span>
+            </div>
+        </footer>
+    </body>
+</html>
