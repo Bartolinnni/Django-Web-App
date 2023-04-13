@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+
+
+{% block content %}
+    <h1 style="color: white; padding: 9px; margin-bottom: 9px;">Name: {{post.name}}</h1>
+    <p style="background-color: white; width: 700px; height: 500px; padding: 9px; border-radius: 10px;">{{post.text}}</p>
+
+    <a href = "{% url 'updatepost' post.id %}" style="padding: 9px;">
+        <em style="color: white;">Edit your post</em>
+    </a>
+
+    <a href = "{% url 'deletepost' post.id %}" style="padding: 9px;">
+        <em style="color: white;">Delete your post</em>
+    </a>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+
+
+{%block content%}
+    
+    <form method='POST' action="/blog/" style="font-size: x-large; font-weight: bold; color: white;">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Dodaj post" style="background-color: #04AA6D;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 4px ;
+            cursor: pointer;
+            width: 130px;">
+    </form>
+{%endblock%}

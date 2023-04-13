@@ -1,0 +1,36 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+<h1 style = 'font-size: 60px;'>Twoje posty:</h1>
+<!-- <ul> -->
+    {% csrf_token %}
+    <form method="get" style="font-size:x-large; font-weight: bolder;">
+        {{myFilter.form.as_p}}
+
+        <input type="submit" value="Search post" style="background-color: grey;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 4px ;
+            cursor: pointer;
+            width: 130px;
+            margin-left: auto;
+            margin-right: auto;">
+    </form>
+
+
+    {% for item in pt %}
+    <!-- <li> -->
+        <a href="{% url 'viewpost' item.pk %}">
+        <div style="height: 100px;">
+            <h3 style=" color: white;" name="{{item.id}}" title="{{item.id}}">{{item.name}}</h3>
+            <!-- {{item.text}} -->
+        </div>
+        </a>
+    <!-- </li> -->
+    {% endfor %}
+<!-- </ul> -->
+
+
+{% endblock %}

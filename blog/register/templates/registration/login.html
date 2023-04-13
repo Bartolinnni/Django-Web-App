@@ -1,0 +1,30 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<form method="POST" style="font-size: large; background-color: #43565a; border-radius: 15px; padding: 30px; color: white; width: 300px; height: 500px;">
+    {% csrf_token %}
+    <span style="color: black; font-size: x-large; padding: 5px;">
+        {{form.username.label}}
+    </span>
+    <span style="border: solid black 3px; border-radius: 15px;">
+        {{form.username}}
+    </span>
+
+
+    <span style="color: black; font-size: x-large; padding: 5px;">
+        {{form.password.label}}
+    </span>
+    <span style="border: solid black 3px; border-radius: 15px;">
+        {{form.password}}
+    </span>
+    <input type="submit" value="Zaloguj sie" style="background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px ;
+    cursor: pointer;
+    width: 130px;">
+    <p style="font-size: x-large;">Don't have an account? <a href="/register">Click here!</a></p>
+</form>
+{% endblock %}
