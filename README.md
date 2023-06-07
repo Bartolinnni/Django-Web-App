@@ -1,5 +1,6 @@
 # Django Web App
-This Django project allows to:
+
+### This Django project allows to:
 - create new accounts
 - log in/log out
 - upload posts
